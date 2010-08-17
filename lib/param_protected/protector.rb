@@ -1,5 +1,10 @@
 module ParamProtected
   class Protector
+    
+    def returning(value)
+      yield(value)
+      value
+    end    
   
     def self.instance(controller)
       unless controller.respond_to?(:pp_protector)
